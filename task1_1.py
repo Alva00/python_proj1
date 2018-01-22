@@ -70,7 +70,13 @@ def http_get():
 
 #transform the page to dataframe
 def get_dtframe(page_str):
-    
+    """
+    Function:
+	This function use BeautifulSoup to catch data from the .html file and generates the two DataFrame Objects from the two tables
+    Disavantage:
+	It can not whole the access of two tables into one
+    author by luojunbin
+    """
     bs = BeautifulSoup(page_str, "html.parser")
     table = bs.find_all('table')
     tr = table[0].find_all('tr')
@@ -112,6 +118,13 @@ def get_dtframe(page_str):
 
 #different strategy of sorting the dataframe
 def Data_Sort(dtframe, colHead, col):
+    """
+    Function:
+	This function does the sort opration on a specific column
+	It change the type of the inner values
+	When there is a None type, it will change the value into 0
+    author by luojunbin
+    """
     for i in range(len(dtframe[colHead[col]])):
         if str(dtframe[colHead[col]][i]) == 'None':
             dtframe[colHead[col]][i] = '0'
@@ -174,6 +187,10 @@ def totalfunc(url):
 
 
 if __name__ == "__main__":
+    """
+    	Get the sorted result of 涨跌 and 成交量, and delete some items with the None value in 开盘, 最低 and 最高
+    """
+   
     url = 'http://www.shfe.com.cn/statements/dataview.html?paramid=delaymarket_all'
     page_str = get(url)
     table = get_dtframe(page_str)
