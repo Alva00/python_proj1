@@ -22,6 +22,11 @@ import matplotlib.pyplot as plt
 
 #get the requst from url
 def get(url):
+    """
+    function:
+        this function gets the "src" with the help of selenium and PantomJS, which enables spider to get the dynamic webpage
+    author by qixinxin 
+    """
     driver = webdriver.PhantomJS()
     driver.get(url)
     time.sleep(1)
@@ -29,8 +34,38 @@ def get(url):
     content = driver.page_source.encode('utf-8')
     return content
 
+# unused
+def http_get():
+    """
+    function: 
+        this function simulates the browser to request a static HTML page from the web server.
+    Disadvantage: 
+        can not get attribute "src" of iframe, which unables to solve the problem of dynamic page acquisition
+    """
+    url = 'http://www.shfe.com.cn/statements/delaymarket_all.html'
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0',
+        'Referer': 'http://www.shfe.com.cn/statements/delaymarket_all.html',
+        'Connecttion': 'keep-alive'
+    }
+    req = urllib2.Request(url, headers=headers)
+    page = urllib2.urlopen(req).read()
+    return page
 
-# In[ ]:
+# unused
+ def http_direct():
+    """
+    function: 
+        this function open the corresponding homepage directly according to the URL,encodes and returns the web page
+    Disadvantage: 
+        can not handle anti-spider mechanism
+    """
+    url = 'http://www.shfe.com.cn/statements/dataview.html?paramid=delaymarket_all'
+    response = urllib2.urlopen(url)
+    page = response.read()
+    page = page.decode('utf-8')
+    return page
+
 
 
 #transform the page to dataframe
