@@ -1,0 +1,81 @@
+commit 182b8c38406647b5099d5776b6ece399009c30c2
+Author: luoqingming <390571270@qq.com>
+Date:   Mon Jan 22 01:05:43 2018 -0500
+
+    add by lqm 1
+
+commit 0e3a52d895b559e71a3759e0aa916c025c19b279
+Merge: fdecb11 784b013
+Author: Alva00 <1406180578@qq.com>
+Date:   Mon Jan 22 13:12:35 2018 +0800
+
+    Merge pull request #3 from Luojb7/master
+    
+    您老再过目
+
+commit 784b01319bf39a01c4ce5569473268797bf1f9b3
+Author: 824073152@qq.com <luojunbin@localhost.localdomain>
+Date:   Mon Jan 22 00:09:56 2018 -0500
+
+    python_proj1.py update
+
+commit 69b80227c072b0d48be691b97b823741eac8b1e4
+Author: 824073152@qq.com <luojunbin@localhost.localdomain>
+Date:   Mon Jan 22 00:08:11 2018 -0500
+
+    data commit
+
+commit fdecb1184d14356c65c37621d1d71a9ca4bc2634
+Merge: 4b98089 a56458d
+Author: Alva00 <1406180578@qq.com>
+Date:   Mon Jan 22 10:21:08 2018 +0800
+
+    Merge pull request #2 from Luojb7/master
+    
+    您老过目
+
+commit a56458d0de786f2de33c743e4028bd137bde805e
+Merge: 25f6f04 0be18ca
+Author: 824073152@qq.com <luojunbin@localhost.localdomain>
+Date:   Sun Jan 21 21:17:21 2018 -0500
+
+    Merge branch 'master' of https://github.com/Luojb7/python_proj1
+
+commit 25f6f04f1ead407bc795b4b8cbf1e4f38140437d
+Author: 824073152@qq.com <luojunbin@localhost.localdomain>
+Date:   Sun Jan 21 21:15:24 2018 -0500
+
+    python_proj1.py commit
+
+commit 4b98089552e8ff7170cebcd83bbef904ee4a593f
+Merge: bdcbc34 0be18ca
+Author: Alva00 <1406180578@qq.com>
+Date:   Mon Jan 22 10:13:39 2018 +0800
+
+    Merge pull request #1 from Luojb7/master
+    
+    python_pro1.py commit
+
+commit 0be18cafd716a57a7017282a8368bfa57ae04e93
+Author: Luojb7 <32451697+Luojb7@users.noreply.github.com>
+Date:   Mon Jan 22 10:09:42 2018 +0800
+
+    Delete python_pro1.py
+
+commit 10be04fa4117df295efff01a50f4d7e92dd6516b
+Author: 824073152@qq.com <luojunbin@localhost.localdomain>
+Date:   Sun Jan 21 21:06:19 2018 -0500
+
+    python_proj1.py commit
+
+commit 4cb9697a660bbcfabc8d348d5a0b5b4492b064a1
+Author: 824073152@qq.com <luojunbin@localhost.localdomain>
+Date:   Sun Jan 21 20:01:02 2018 -0500
+
+    python_pro1.py commit
+
+commit bdcbc3485b916d9d89737c195a5b74585729a052
+Author: Alva00 <1406180578@qq.com>
+Date:   Sun Jan 21 03:50:34 2018 -0500
+
+    Readme
