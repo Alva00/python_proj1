@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[8]:
+# In[46]:
 
 
 import urllib
@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from pandas.core.frame import DataFrame
 
 
-# In[9]:
+# In[47]:
 
 
 def get_html(url):
@@ -37,10 +37,10 @@ def get_html(url):
     return page_source
 
 
-# In[12]:
+# In[48]:
 
 
-def get_list(page_str):
+def get_dtframe(page_str):
     
     final = []
     bs = BeautifulSoup(page_str, "html.parser") 
@@ -55,22 +55,57 @@ def get_list(page_str):
     colHead = final[1]
     final = final[2:]
     table = DataFrame(final,columns=colHead)
-    
-    for i in range(len(table[colHead[2]])):
-        table[colHead[2]][i] = float(table[colHead[2]][i])
-    table = table.sort_values(by=colHead[0])
-    
     return table
 
 
-# In[15]:
+# In[ ]:
+
+
+
+
+
+# In[83]:
+
+
+def Data_Sort(dtframe,colHead,col):
+    for i in range(len(dtframe[colHead[col]])):
+        if str(dtframe[colHead[col]][i]) == 'None':
+            dtframe[colHead[col]][i] = '0'
+        dtframe[colHead[col]][i] = float(dtframe[colHead[col]][i])
+        
+    dtframe = dtframe.sort_values(by=colHead[col])
+    return dtframe
+
+
+# In[93]:
 
 
 if __name__ == "__main__":
     
     url = 'http://www.shfe.com.cn/statements/delaymarket_all.html'
     page_str = get_html(url)
-    final = get_list(page_str)
+    table = get_dtframe(page_str)
+    colHead = table.columns.values.tolist()
+    
+    '''
+    #sort
+    tableOfUD = Data_Sort(table,colHead,2)
+    tableOfUD.to_csv("涨跌.csv",encoding="utf-8")
+    #table1 = table.loc[table[colHead[5]].notnull()]
+    tableOfVT = Data_Sort(table,colHead,5)
+    tableOfVT.to_csv("成交量.csv",encoding="utf-8")
+    
+    #select
+    tableOfKP = table.loc[table[colHead[8]].notnull()]
+    tableOfKP.to_csv("开盘.csv",encoding="utf-8")
 
-    final.to_csv("data.csv",encoding="utf-8")
+    tableOfL = table.loc[table[colHead[9]].notnull()]
+    tableOfL.to_csv("最低.csv",encoding="utf-8")
+    
+    
+    tableOfH = table.loc[table[colHead[10]].notnull()]
+    tableOfH.to_csv("最高.csv",encoding="utf-8")
+   '''
+
+    
 
