@@ -123,7 +123,7 @@ def Data_Sort(dtframe, colHead, col):
 	This function does the sort opration on a specific column
 	It change the type of the inner values
 	When there is a None type, it will change the value into 0
-    author by luojunbin
+    author by luojunbin by luoqingming
     """
     for i in range(len(dtframe[colHead[col]])):
         if str(dtframe[colHead[col]][i]) == 'None':
@@ -135,6 +135,14 @@ def Data_Sort(dtframe, colHead, col):
 
 #each kind of metal create a csv
 def metal_to_csv(dtframe,metal_name):
+    """
+    function: 
+	@param dtframe:the dataframe tranform from the url data
+	@param metal_name:the abbreviation of the name of futures,e.g. "cu" for copper
+	@result:create the csv table file of each kind of futures   
+    author by luoqingming
+        
+    """
     Head = dtframe.columns.values.tolist()
     dtframe = dtframe.loc[table[Head[0]].str.contains(metal_name)]
     dtframe.to_csv("metal_"+metal_name+"_data.csv",encoding="utf-8")
